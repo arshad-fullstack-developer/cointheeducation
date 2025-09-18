@@ -1,0 +1,411 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use App\Models\SiteSetting;
+
+class SiteSettingSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $settings = [
+            // General Settings
+            [
+                'key' => 'site_title',
+                'value' => 'Coin The Education',
+                'type' => 'text',
+                'group' => 'general',
+                'display_name' => 'Site Title',
+                'description' => 'The main title of your website',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'site_description',
+                'value' => 'Comprehensive education management system for schools and institutions',
+                'type' => 'textarea',
+                'group' => 'general',
+                'display_name' => 'Site Description',
+                'description' => 'Brief description of your website for SEO',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'site_keywords',
+                'value' => 'education, school management, student portal, academic system',
+                'type' => 'textarea',
+                'group' => 'general',
+                'display_name' => 'Site Keywords',
+                'description' => 'SEO keywords for your website',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'site_author',
+                'value' => 'Coin The Education Team',
+                'type' => 'text',
+                'group' => 'general',
+                'display_name' => 'Site Author',
+                'description' => 'Author or organization name',
+                'is_public' => true,
+            ],
+
+            // Branding Settings
+            [
+                'key' => 'company_name',
+                'value' => 'Coin The Education',
+                'type' => 'text',
+                'group' => 'branding',
+                'display_name' => 'Company Name',
+                'description' => 'Your company or organization name',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'company_tagline',
+                'value' => 'Empowering Education Through Technology',
+                'type' => 'text',
+                'group' => 'branding',
+                'display_name' => 'Company Tagline',
+                'description' => 'Your company slogan or tagline',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'company_address',
+                'value' => '123 Education Street, Learning City, LC 12345',
+                'type' => 'textarea',
+                'group' => 'branding',
+                'display_name' => 'Company Address',
+                'description' => 'Your company physical address',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'company_phone',
+                'value' => '+1 (555) 123-4567',
+                'type' => 'text',
+                'group' => 'branding',
+                'display_name' => 'Company Phone',
+                'description' => 'Your company phone number',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'company_email',
+                'value' => 'info@cointheeducation.com',
+                'type' => 'text',
+                'group' => 'branding',
+                'display_name' => 'Company Email',
+                'description' => 'Your company email address',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'company_website',
+                'value' => 'https://cointheeducation.com',
+                'type' => 'text',
+                'group' => 'branding',
+                'display_name' => 'Company Website',
+                'description' => 'Your company website URL',
+                'is_public' => true,
+            ],
+
+            // Logo Settings
+            [
+                'key' => 'logo_light',
+                'value' => null,
+                'type' => 'image',
+                'group' => 'branding',
+                'display_name' => 'Light Logo',
+                'description' => 'Logo for light backgrounds (PNG with transparency recommended)',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'logo_dark',
+                'value' => null,
+                'type' => 'image',
+                'group' => 'branding',
+                'display_name' => 'Dark Logo',
+                'description' => 'Logo for dark backgrounds (PNG with transparency recommended)',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'favicon',
+                'value' => null,
+                'type' => 'image',
+                'group' => 'branding',
+                'display_name' => 'Favicon',
+                'description' => 'Website favicon (32x32 pixels recommended)',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'logo_width',
+                'value' => '150',
+                'type' => 'text',
+                'group' => 'branding',
+                'display_name' => 'Logo Width (px)',
+                'description' => 'Width of the logo in pixels',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'logo_height',
+                'value' => '50',
+                'type' => 'text',
+                'group' => 'branding',
+                'display_name' => 'Logo Height (px)',
+                'description' => 'Height of the logo in pixels',
+                'is_public' => true,
+            ],
+
+            // Color Settings
+            [
+                'key' => 'primary_color',
+                'value' => '#8B5CF6',
+                'type' => 'color',
+                'group' => 'colors',
+                'display_name' => 'Primary Color',
+                'description' => 'Main brand color used throughout the application',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'secondary_color',
+                'value' => '#EC4899',
+                'type' => 'color',
+                'group' => 'colors',
+                'display_name' => 'Secondary Color',
+                'description' => 'Secondary brand color for accents and highlights',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'accent_color',
+                'value' => '#F59E0B',
+                'type' => 'color',
+                'group' => 'colors',
+                'display_name' => 'Accent Color',
+                'description' => 'Accent color for special elements and call-to-actions',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'success_color',
+                'value' => '#10B981',
+                'type' => 'color',
+                'group' => 'colors',
+                'display_name' => 'Success Color',
+                'description' => 'Color for success messages and positive actions',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'warning_color',
+                'value' => '#F59E0B',
+                'type' => 'color',
+                'group' => 'colors',
+                'display_name' => 'Warning Color',
+                'description' => 'Color for warning messages and alerts',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'error_color',
+                'value' => '#EF4444',
+                'type' => 'color',
+                'group' => 'colors',
+                'display_name' => 'Error Color',
+                'description' => 'Color for error messages and negative actions',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'info_color',
+                'value' => '#3B82F6',
+                'type' => 'color',
+                'group' => 'colors',
+                'display_name' => 'Info Color',
+                'description' => 'Color for informational messages and links',
+                'is_public' => true,
+            ],
+
+            // Social Media Settings
+            [
+                'key' => 'facebook_url',
+                'value' => 'https://facebook.com/cointheeducation',
+                'type' => 'text',
+                'group' => 'social',
+                'display_name' => 'Facebook URL',
+                'description' => 'Your Facebook page URL',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'twitter_url',
+                'value' => 'https://twitter.com/cointheeducation',
+                'type' => 'text',
+                'group' => 'social',
+                'display_name' => 'Twitter URL',
+                'description' => 'Your Twitter profile URL',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'instagram_url',
+                'value' => 'https://instagram.com/cointheeducation',
+                'type' => 'text',
+                'group' => 'social',
+                'display_name' => 'Instagram URL',
+                'description' => 'Your Instagram profile URL',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'linkedin_url',
+                'value' => 'https://linkedin.com/company/cointheeducation',
+                'type' => 'text',
+                'group' => 'social',
+                'display_name' => 'LinkedIn URL',
+                'description' => 'Your LinkedIn company page URL',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'youtube_url',
+                'value' => 'https://youtube.com/cointheeducation',
+                'type' => 'text',
+                'group' => 'social',
+                'display_name' => 'YouTube URL',
+                'description' => 'Your YouTube channel URL',
+                'is_public' => true,
+            ],
+
+            // Contact Settings
+            [
+                'key' => 'contact_email',
+                'value' => 'contact@cointheeducation.com',
+                'type' => 'text',
+                'group' => 'contact',
+                'display_name' => 'Contact Email',
+                'description' => 'Primary contact email address',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'support_email',
+                'value' => 'support@cointheeducation.com',
+                'type' => 'text',
+                'group' => 'contact',
+                'display_name' => 'Support Email',
+                'description' => 'Technical support email address',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'contact_phone',
+                'value' => '+1 (555) 123-4567',
+                'type' => 'text',
+                'group' => 'contact',
+                'display_name' => 'Contact Phone',
+                'description' => 'Primary contact phone number',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'contact_address',
+                'value' => '123 Education Street, Learning City, LC 12345',
+                'type' => 'textarea',
+                'group' => 'contact',
+                'display_name' => 'Contact Address',
+                'description' => 'Primary contact address',
+                'is_public' => true,
+            ],
+            [
+                'key' => 'business_hours',
+                'value' => 'Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM\nSunday: Closed',
+                'type' => 'textarea',
+                'group' => 'contact',
+                'display_name' => 'Business Hours',
+                'description' => 'Your business operating hours',
+                'is_public' => true,
+            ],
+
+            // System Settings
+            [
+                'key' => 'maintenance_mode',
+                'value' => '0',
+                'type' => 'boolean',
+                'group' => 'system',
+                'display_name' => 'Maintenance Mode',
+                'description' => 'Enable maintenance mode to restrict access',
+                'is_public' => false,
+            ],
+            [
+                'key' => 'maintenance_message',
+                'value' => 'We are currently performing maintenance. Please check back soon.',
+                'type' => 'textarea',
+                'group' => 'system',
+                'display_name' => 'Maintenance Message',
+                'description' => 'Message displayed during maintenance mode',
+                'is_public' => false,
+            ],
+            [
+                'key' => 'default_language',
+                'value' => 'en',
+                'type' => 'select',
+                'group' => 'system',
+                'display_name' => 'Default Language',
+                'description' => 'Default language for the application',
+                'options' => [
+                    'en' => 'English',
+                    'es' => 'Spanish',
+                    'fr' => 'French',
+                    'de' => 'German',
+                    'ar' => 'Arabic',
+                ],
+                'is_public' => false,
+            ],
+            [
+                'key' => 'timezone',
+                'value' => 'UTC',
+                'type' => 'select',
+                'group' => 'system',
+                'display_name' => 'Timezone',
+                'description' => 'Default timezone for the application',
+                'options' => [
+                    'UTC' => 'UTC',
+                    'America/New_York' => 'Eastern Time',
+                    'America/Chicago' => 'Central Time',
+                    'America/Denver' => 'Mountain Time',
+                    'America/Los_Angeles' => 'Pacific Time',
+                    'Europe/London' => 'London',
+                    'Europe/Paris' => 'Paris',
+                    'Asia/Tokyo' => 'Tokyo',
+                    'Asia/Dubai' => 'Dubai',
+                ],
+                'is_public' => false,
+            ],
+            [
+                'key' => 'date_format',
+                'value' => 'Y-m-d',
+                'type' => 'select',
+                'group' => 'system',
+                'display_name' => 'Date Format',
+                'description' => 'Default date format for the application',
+                'options' => [
+                    'Y-m-d' => 'YYYY-MM-DD',
+                    'm/d/Y' => 'MM/DD/YYYY',
+                    'd/m/Y' => 'DD/MM/YYYY',
+                    'M d, Y' => 'Jan 01, 2024',
+                    'd M Y' => '01 Jan 2024',
+                ],
+                'is_public' => false,
+            ],
+            [
+                'key' => 'time_format',
+                'value' => 'H:i',
+                'type' => 'select',
+                'group' => 'system',
+                'display_name' => 'Time Format',
+                'description' => 'Default time format for the application',
+                'options' => [
+                    'H:i' => '24-hour (14:30)',
+                    'h:i A' => '12-hour (2:30 PM)',
+                    'h:i a' => '12-hour (2:30 pm)',
+                ],
+                'is_public' => false,
+            ],
+        ];
+
+        foreach ($settings as $setting) {
+            SiteSetting::create($setting);
+        }
+    }
+}
+
+
+
