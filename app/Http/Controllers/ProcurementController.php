@@ -75,7 +75,7 @@ class ProcurementController extends Controller
      */
     public function create()
     {
-        $stationaryItems = StationaryItem::select('id', 'name', 'unit_price')->get();
+        $stationaryItems = StationaryItem::select(['id', 'name', 'selling_price as unit_price'])->get();
         $godowns = Godown::select('id', 'name', 'location')->get();
 
         return Inertia::render('Procurements/Create', [
@@ -127,7 +127,7 @@ class ProcurementController extends Controller
      */
     public function edit(Procurement $procurement)
     {
-        $stationaryItems = StationaryItem::select('id', 'name', 'unit_price')->get();
+        $stationaryItems = StationaryItem::select(['id', 'name', 'selling_price as unit_price'])->get();
         $godowns = Godown::select('id', 'name', 'location')->get();
 
         return Inertia::render('Procurements/Edit', [
